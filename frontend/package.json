@@ -4,14 +4,23 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "concurrently --kill-others \"npm run start-fe\" \"npm run start-be\"",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "test": "npx vitest",
+    "test:watch": "npx vitest --watch",
+    "test:coverage": "npx vitest --coverage",
+    "test:ui": "npx vitest --ui",
+    "start-fe": "vite --port 3000",
+    "start-be": "json-server --watch db.json --delay 500 --port 3001"
   },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "axios": "^1.13.2",
+    "dom": "^0.0.3",
+    "dotenv": "^17.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.12.0",
+    "router": "^2.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

@@ -1,8 +1,135 @@
+/* JobCard two-column layout and apply button */
+.JobCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.JobCard-details {
+  flex: 1;
+}
+.JobCard-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  height: 100%;
+}
+.apply-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  background: #61dafb;
+  color: #181c24;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.apply-btn:hover {
+  background: #21a1c4;
+}
+.apply-btn:disabled {
+  background: #b0b8c1;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+/* Style search forms with button to the right of input */
+.search-form {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+}
+
+.search-form input[type="text"] {
+  flex: 1;
+}
+/* Center submit buttons in auth forms */
+.auth-form .center-btn,
+.signup-form .center-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* Ensure all forms are column-oriented */
+form, .profile-form, .auth-form, .password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+}
+
+form input, .profile-form input, .auth-form input, .password-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #232a36;
+  color: #e6e6e6;
+}
+
+form button, .profile-form button, .auth-form button, .password-form button {
+  align-self: flex-end;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  background: #61dafb;
+  color: #181c24;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover, .profile-form button:hover, .auth-form button:hover, .password-form button:hover {
+  background: #21a1c4;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: #181c24;
+  color: #e6e6e6;
+}
+
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+
+h1, h2, h3 {
+  color: #fff;
+  font-weight: 700;
+}
+
+
+p {
+  color: #c0c0c0;
 }
 
 .logo {
@@ -39,4 +166,31 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Special card themes for CompanyCard and JobCard */
+.CompanyCard, .JobCard {
+  background: #232a36;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 1.5px 4px rgba(0,0,0,0.10);
+  margin: 1.5rem auto;
+  padding: 1.5rem 2rem;
+  max-width: 500px;
+  text-align: left;
+  transition: box-shadow 0.2s;
+}
+.CompanyCard:hover, .JobCard:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13), 0 3px 8px rgba(0,0,0,0.09);
+}
+.CompanyCard-logo {
+  float: right;
+  max-height: 40px;
+  margin-left: 1rem;
+}
+.CompanyCard h3, .JobCard h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.CompanyCard p, .JobCard p {
+  margin: 0.5rem 0 0 0;
 }
